@@ -144,7 +144,7 @@ namespace RevisaoDeConceitosCSharp
             - 3) Ler três palavras na mesma linha, separadas por espaço, armazenando cada uma em uma variável            
             */
 
-            
+            /*
             //1):
             Console.WriteLine("\n\nDigite Bom dia! e pressione Enter:");
             string frase = Console.ReadLine();
@@ -170,7 +170,7 @@ namespace RevisaoDeConceitosCSharp
             5) Ler um Caractere
             6) Ler um número double
             7) Ler um nome (única palavra), sexo (caracter F ou M), idade (inteiro) e altura (double) na mesma linha, armazenando-os em quatro variáveis com os devidos tipos
-             */
+            
 
             //4):
             Console.WriteLine("\nDigite um número inteiro: ");
@@ -196,7 +196,64 @@ namespace RevisaoDeConceitosCSharp
             double altura = double.Parse(vet[3], CultureInfo.InvariantCulture);
 
             Console.WriteLine($"Seus dados são: Nome: {nome2}, Sexo: {sexo}, tem {idade3} anos e possui " + altura.ToString("F2", CultureInfo.InvariantCulture) + " de altura");
-            
+            */
+
+            //REVISÃO: Estrutura Condicional (if-else)
+
+            Console.Write("\nDigite o horário atual: ");
+            string[] horario = Console.ReadLine().Split(':');
+            int hora = int.Parse(horario[0]);
+
+            if(hora > 8 && hora < 12)
+            {
+                Console.WriteLine("\nBom Dia!");
+            }
+            else if(hora > 12 && hora < 18)
+            {
+                Console.WriteLine("\nBoa Tarde!");
+            }
+            else if(hora > 18 && hora < 23)
+            {
+                Console.WriteLine("\nBoa Noite!");
+            }
+            else
+            {
+                Console.WriteLine("\nBoa Madrugada!");
+            }
+
+            //REVISÃO: ESTRUTURA REPETITIVA WHILE
+
+            /*PROBLEMA EXEMPLO: Digitar um número e mostrar sua raiz quadrada com três casas decimais,
+            depois repetir o procedimento. Quando o usuário digitar um número negativo (podendo
+            inclusive ser na primeira vez), mostrar uma mensagem "Número negativo" e terminar o programa.
+            */
+
+            Console.Write("\nDigite um número: ");
+            int x = int.Parse(Console.ReadLine());
+
+            while (x > 0)
+            {
+                Console.WriteLine(Math.Sqrt(x).ToString("F3", CultureInfo.InvariantCulture));
+                Console.Write("Digite outro número: ");
+                x = int.Parse(Console.ReadLine());
+            }
+            Console.WriteLine("Número Negativo!\n");
+
+            //REVISÃO: ESTRUTURA REPETITIVA FOR
+
+            /*PROBLEMA EXEMPLO: Digitar um número N e depois N valores inteiros.
+            Mostrar a soma dos N valores digitados.*/
+
+            Console.Write("Quantos números inteiros você vai digitar? ");
+            int n7 = int.Parse(Console.ReadLine());
+            int soma = 0;
+
+            for(int i=1; i <= n7; i++)
+            {
+                Console.Write($"Valor #{i}: ");
+                soma += int.Parse(Console.ReadLine());
+            }
+            Console.WriteLine($"Soma = {soma}");
         }
     }
 }
